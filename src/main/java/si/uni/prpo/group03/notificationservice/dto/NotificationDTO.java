@@ -17,9 +17,13 @@ public class NotificationDTO {
     private String message;
 
     @Schema(description = "Subject of the notification", example = "Account Confirmation")
+    @NotBlank(message = "Subject should not be empty")
     private String subject;
 
-    // Getters
+    @Schema(description = "Type of the notification")
+    @NotBlank(message = "Type should not be empty")
+    private String type;
+
     public String getEmail() {
         return email;
     }
@@ -30,5 +34,9 @@ public class NotificationDTO {
 
     public String getSubject() {
         return subject;
+    }
+
+    public String getType() {
+        return type;
     }
 }
